@@ -1,0 +1,7 @@
+<?php
+header("Content-type: text/plain");
+?>
+User-agent: *
+Disallow: /manager/
+Disallow: /administration/
+Host: <?php echo FUSION_HOST ."\n"; ?>
