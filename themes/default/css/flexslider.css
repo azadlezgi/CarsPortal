@@ -1,0 +1,98 @@
+#view_full_size {
+    margin: 0 0 10px 0;
+}
+#view_full_size ul.slides {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 340px;
+    overflow: hidden;
+}
+#view_full_size ul.slides li {
+    float: left;
+}
+#view_full_size ul.slides li a {
+    display: block;
+}
+#view_full_size ul.slides li a img {
+    width: 100%;
+    min-height: 340px;
+    border: none;
+}
+
+
+
+
+#thumbs_list {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+}
+#thumbs_list ul.slides {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 80px;
+    width: 105%;
+    overflow: hidden; 
+}
+#thumbs_list ul.slides li {
+    float: left;
+    width: 107px;
+    margin: 0 10px 0 0;
+}
+#thumbs_list ul.slides li span {
+    display: block;
+    cursor: pointer;
+}
+#thumbs_list ul.slides li span img {
+    display: block;
+    width: 100%;
+}
+
+#thumbs_list ul.flex-direction-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#thumbs_list ul.flex-direction-nav li {
+    
+}
+#thumbs_list ul.flex-direction-nav li a {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 32px;
+    height: 80px;
+    text-indent: -5000px;
+    outline: none;
+
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+#thumbs_list ul.flex-direction-nav li a.flex-prev {
+    left: -50px;
+    background-repeat:  no-repeat;
+    background-image: url(../images/lightbox/nav-arrows-prev.png);
+    background-position: right center;
+}
+#thumbs_list:hover ul.flex-direction-nav li a.flex-prev {
+    left: 0;
+}
+#thumbs_list ul.flex-direction-nav li a.flex-prev:hover {
+    background-position: left center;
+}
+#thumbs_list ul.flex-direction-nav li a.flex-next {
+    right: -50px;
+    background-repeat:  no-repeat;
+    background-image: url(../images/lightbox/nav-arrows-next.png);
+    background-position: right center;
+}
+#thumbs_list:hover ul.flex-direction-nav li a.flex-next {
+    right: 0;
+}
+#thumbs_list ul.flex-direction-nav li a.flex-next:hover {
+    background-position: left center;
+}
