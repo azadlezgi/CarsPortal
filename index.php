@@ -8,7 +8,6 @@ else { $fusion_uri = FUSION_URI; }
 $fusion_uri = explode("?", $fusion_uri);
 $fusion_uri = $fusion_uri[0];
 
-
 if ($fusion_uri=="/autos") {
 	header("HTTP/1.1 301 Moved Permanently");
 	header("Location: /cars/");
