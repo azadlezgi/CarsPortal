@@ -21,7 +21,7 @@ add_to_head ("<link rel='stylesheet' href='/". THEME ."css/bootstrap.css' type='
 add_to_head ("<link rel='stylesheet' href='/". THEME ."styles.css' type='text/css' media='screen' />");
 
 foreach ($languages as $lang_key => $lang_value) {
-	add_to_head ("<link rel='alternate' hreflang='". $lang_value['languages_short'] ."' href='http://". $lang_value['languages_site'] ."/' />");
+	add_to_head ("<link rel='alternate' hreflang='". $lang_value['languages_short'] ."' href='". $lang_value['languages_site'] ."' />");
 } // foreach languages
 
 include "includes/top-admin_panel.php";
@@ -29,28 +29,26 @@ include "includes/top-admin_panel.php";
 ?>
 <div class="wrapper">
 	<header>
-		<div class="main">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-3">
-						<a href="/" id="logo"><i class="fa fa-car"></i>CARS <span>AZ</span></a>
-					</div>
-					<div class="col-sm-7">
-						<?php include INFUSIONS ."toplinks_panel/toplinks_panel.php"; ?>
-					</div>
-					<div class="col-sm-2 text-right clearfix">
-						<div id="languages-block">
-							<div class="current">
-								<span class="flags flag_<?php echo LOCALESHORT; ?>"><?php echo LOCALESHORT; ?><i class="fa fa-angle-down"></i></span>
-							</div>
-							<ul class="languages-block_ul">
-								<?php foreach ($languages as $lang_key => $lang_value) { ?>
-								<li<?php echo (LOCALESHORT==$lang_value['languages_short'] ? ' class="selected"' : ''); ?>>
-									<a href="http://<?php echo $lang_value['languages_site'] . FUSION_URI; ?>"><span class="flags flag_<?php echo $lang_value['languages_short']; ?>"><?php echo $lang_value['languages_name']; ?></span></a>
-								</li>
-								<?php } ?>
-							</ul>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<a href="/" id="logo"><i class="fa fa-car"></i>CARS <span>AZ</span></a>
+				</div>
+				<div class="col-sm-7">
+					<?php include INFUSIONS ."toplinks_panel/toplinks_panel.php"; ?>
+				</div>
+				<div class="col-sm-2 text-right clearfix">
+					<div id="languages-block">
+						<div class="current">
+							<span class="flags flag_<?php echo LOCALESHORT; ?>"><?php echo LOCALESHORT; ?><i class="fa fa-angle-down"></i></span>
 						</div>
+						<ul class="languages-block_ul">
+							<?php foreach ($languages as $lang_key => $lang_value) { ?>
+							<li<?php echo (LOCALESHORT==$lang_value['languages_short'] ? ' class="selected"' : ''); ?>>
+								<a href="<?php echo $lang_value['languages_site'] . FUSION_URI; ?>"><span class="flags flag_<?php echo $lang_value['languages_short']; ?>"><?php echo $lang_value['languages_name']; ?></span></a>
+							</li>
+							<?php } ?>
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -59,17 +57,13 @@ include "includes/top-admin_panel.php";
 
 	<section class="filter_panel">
 		<div class="container">
-			<div class="row">
-				<?php include INFUSIONS."cars_filter_panel/cars_filter_panel.php"; ?>
-			</div>
+			<?php include INFUSIONS."cars_filter_panel/cars_filter_panel.php"; ?>
 		</div>
 	</section>
 
 	<nav>
-		<div class="main">
-			<div class="container">
-				<?php echo showsublinks("", ""); ?>
-			</div>
+		<div class="container">
+			<?php echo showsublinks("", ""); ?>
 		</div>
 	</nav>
 

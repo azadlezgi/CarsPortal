@@ -130,7 +130,7 @@ define("FUSION_SELF", basename($_SERVER['PHP_SELF']));
 define("FUSION_IP", $_SERVER['REMOTE_ADDR']);
 define("QUOTES_GPC", (ini_get('magic_quotes_gpc') ? TRUE : FALSE));
 define("FUSION_URI", $_SERVER['REQUEST_URI']);
-# define("FUSION_REFERER", ($_SERVER['HTTP_REFERER'] ? $_SERVER['HTTP_REFERER'] : ""));
+define("FUSION_REFERER", (isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : ""));
 define("FUSION_HOST", $_SERVER['HTTP_HOST']);
 define("FUSION_TODAY", mktime());
 
@@ -138,9 +138,9 @@ define("FUSION_TODAY", mktime());
 define("ADMIN", BASEDIR."administration/");
 define("CLASSES", BASEDIR."includes/classes/");
 define("DOWNLOADS", BASEDIR."downloads/");
-define("IMAGES", "/uploads/");
-// define("IMAGES", BASEDIR."uploads/");
-// define("IMAGES", "http://cdn.cars-az.com/uploads/");
+//define("IMAGES", BASEDIR."uploads/");
+//define("IMAGES", "/uploads/");
+define("IMAGES", "http://cdn.cars-az.com/uploads/");
 define("IMAGES_A", IMAGES."articles/");
 define("IMAGES_A_T", IMAGES."articles/thumbs/");
 define("IMAGES_N", IMAGES."news/");
@@ -160,14 +160,18 @@ define("CACHE", BASEDIR."includes/cache/");
 define("UL", "<span class='ulduz'>*</span>");
 
 
+// echo "<pre>";
+// print_r($_SESSION['locale']);
+// echo "</pre>";
+// echo "<hr>";
 $curentlang = array();
-if ($_SESSION['locale']) {
+if (isset($_SESSION['locale'])) {
 	$curentlang = $_SESSION['locale'];
 	define("LOCALESET", $_SESSION['locale']['languages_folder']."/");
 	define("LOCALESHORT", $_SESSION['locale']['languages_short']);
 } else {
 	foreach ($languages as $key => $value) {
-		if ($value['languages_site']==FUSION_HOST) {
+		if ( str_replace("https://", "", str_replace("http://", "", $value['languages_site']))==FUSION_HOST ) {
 			$curentlang = $value;
 		}
 	} // foreach languages
@@ -182,7 +186,7 @@ if ($_SESSION['locale']) {
 	define("LOCALESET", $curentlang['languages_folder']."/");
 	define("LOCALESHORT", $curentlang['languages_short']);
 } // session locale
-//unset($_SESSION['locale']);
+// unset($_SESSION['locale']);
 
 
 // Variables initializing

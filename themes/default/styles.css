@@ -289,10 +289,9 @@ nav {
 }
 nav .container {
 	background: #fff;
-	padding: 10px 0;
-	border: none;
-	border-top: 1px solid #EEEEEE;
-	border-bottom: 1px solid #EEEEEE;
+	border: 1px solid #EEEEEE;
+	border-top: none;
+	border-bottom: none;
 }
 nav ul {
 	list-style: none;
@@ -309,12 +308,15 @@ nav ul:after {
 }
 nav ul li {
 	float: left;
-	width: 12.5%;
-	border: none;
-	border-left: 1px solid #EEEEEE;
+	width: 14.28%;
+	padding: 10px 0;
+	border: 1px solid #EEEEEE;
+	border-left: none;
+	border-right: none;
 }
-nav ul li.first-link {
-	border: none;
+nav ul li.current-link, nav ul li.current-parent {
+	background: #F5F5F5;
+	border-top: #EEEEEE;
 }
 nav ul li a {
 	display: block;
@@ -323,6 +325,11 @@ nav ul li a {
 	text-transform: uppercase;
 	color: #333;
 	text-align: center;
+	border: none;
+	border-left: 1px solid #EEEEEE;
+}
+nav ul li.first-link a {
+	border: none;
 }
 nav ul li ul {
 	display: none;
@@ -338,6 +345,9 @@ section {
 }
 section .container {
 	background: #fff;
+	border: 1px solid #EEEEEE;
+	border-top: none;
+	border-bottom: none;
 }
 
 section .container .left_block {
@@ -678,7 +688,10 @@ article .markamodel .model_colums .allmarka .carcount {
 	
 }
 .filter_panel .carsfilter {
-	padding-top: 20px;
+	margin-top: 15px;
+	padding-top: 15px;
+	background: #F5F5F5;
+	border-top: 1px solid #EEEEEE;
 }
 .filter_panel .carsfilter .fileds {
 	padding-bottom: 20px;

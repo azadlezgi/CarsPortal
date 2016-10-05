@@ -95,9 +95,9 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 									LEFT JOIN ". DB_CARSDESC ." ON ". DB_CARS .".cars_id=". DB_CARSDESC .".cars_desc_car_id 
 									LEFT JOIN ". DB_SEOURL ." ON seourl_filedid=cars_id AND seourl_component=". $seourl_component ."
 									WHERE (cars_aktiv='1' || cars_aktiv='4')". $filterdb ."
-									ORDER BY `cars_id` DESC
+								
 									LIMIT ". $rowstart .", ". $settings['cars_per_page'] ."");
-									
+//ORDER BY `cars_id` DESC
 
 if ($_GET['filter_submit']) {
 ?>

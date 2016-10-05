@@ -23,22 +23,22 @@ echo "<!DOCTYPE html>\n";
 echo "<html lang='". $locale['xml_lang'] ."'>\n";
 echo "<head>\n";
 // echo "<base href='". $settings['siteurl'] ."' />\n";
-echo "<base href='http://". FUSION_HOST ."/' />\n";
+// echo "<base href='http://". FUSION_HOST ."/' />\n";
 // echo "<meta http-equiv='Content-Type' content='text/html; charset=". $locale['charset'] ."' />\n";
 echo "<meta charset='". $locale['charset'] ."' />\n";
 echo "<title>". $settings['sitename'] ."</title>\n";
 echo "<meta name='description' content='". $settings['description'] ."' />\n";
 // echo "<meta name='keywords' content='". $settings['keywords'] ."' />\n";
 // add_to_footer ("<link rel='stylesheet' href='". THEME ."styles.css' type='text/css' media='screen' />");
-echo "<link rel='stylesheet' href='". THEME ."styles.css' type='text/css' media='screen' />\n";
+echo "<link rel='stylesheet' href='/". THEME ."styles.css' type='text/css' media='screen' />\n";
 // echo "<meta http-equiv='Cache-Control' content='max-age=604800, must-revalidate' />\n";
 if (file_exists(THEME ."images/favicon.ico")) {
-echo "<link rel='shortcut icon' href='". THEME ."images/favicon.ico' type='image/x-icon' />\n";
-echo "<link rel='icon' href='". THEME ."images/favicon.ico' type='image/x-icon' />\n";
+echo "<link rel='shortcut icon' href='/". THEME ."images/favicon.ico' type='image/x-icon' />\n";
+echo "<link rel='icon' href='/". THEME ."images/favicon.ico' type='image/x-icon' />\n";
 }
 if (function_exists("get_head_tags")) { echo get_head_tags(); }
 
-add_to_footer ("<script type='text/javascript' src='".INCLUDES."jquery/jquery.js'></script>");
+add_to_footer ("<script type='text/javascript' src='/".INCLUDES."jquery/jquery.js'></script>");
 
 // echo "<script type='text/javascript' src='".INCLUDES."jquery/jquery.js'></script>\n";
 // echo "<script async type='text/javascript' src='". INCLUDES ."jscript.js'></script>\n";

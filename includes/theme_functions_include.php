@@ -128,9 +128,9 @@ function showsublinks($sep = "&middot;", $class = "") {
 			if ($sdata['link_url'] != "---" && checkgroup($sdata['link_visibility'])) {
 				$link_target = ($sdata['link_window'] == "1" ? " target='_blank'" : "");
 				$li_class .= "li_class". $i;
-				if ($i == 1) { $li_class .= ($li_class ? " " : "")." first-link"; }
-
-				if (START_PAGE == $sdata['link_url']) { $li_class .= ($li_class ? " " : "")."current-link"; }
+				if ($i == 1) { $li_class .= (!empty($li_class) ? " " : "") ." first-link"; }
+				if (FUSION_URI == $sdata['link_url']) { $li_class .= (!empty($li_class) ? " " : "") ."current-link"; }
+				if ( preg_match("/". str_replace("/", "\/", $sdata['link_url']) ."/", FUSION_URI) ) { $li_class .= (!empty($li_class) ? " " : "") ."current-parent"; }
 				if (preg_match("!^(ht|f)tp(s)?://!i", $sdata['link_url'])) {
 					$res .= "<li".($li_class ? " class='".$li_class."'" : "").">".$sep."<a href='".$sdata['link_url']."'".$link_target.">";
 					$res .= parseubb(unserialize($sdata['link_name'])[LOCALESHORT], "b|i|u|color|img")."</a></li>\n";
