@@ -75,6 +75,15 @@ include "includes/top-admin_panel.php";
 					<?php echo U_CENTER; ?>
 				</div>
 				<?php } ?>
+
+				<?php if (LEFT) { ?>
+					<div class="col-sm-3 left_block">
+						<aside>
+							<?php echo LEFT; ?>
+						</aside>
+					</div>
+				<?php } ?>
+
 				<?php if (LEFT && RIGHT) { ?>
 				<div class="col-sm-6 center_block">
 				<?php } else if (LEFT) { ?>
@@ -91,14 +100,6 @@ include "includes/top-admin_panel.php";
 					</article>
 				</div>
 
-				<?php if (LEFT) { ?>
-				<div class="col-sm-3 left_block">
-					<aside>
-						<?php echo LEFT; ?>
-					</aside>
-				</div>
-				<?php } ?>
-
 				<?php if (RIGHT) { ?>
 				<div class="col-sm-3 right clearfix">
 					<aside>
@@ -106,6 +107,7 @@ include "includes/top-admin_panel.php";
 					</aside>
 				</div>
 				<?php } ?>
+
 				<?php if (L_CENTER) { ?>
 				<div class="col-sm-12 clearfix">
 					<?php echo L_CENTER; ?>

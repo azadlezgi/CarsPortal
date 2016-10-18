@@ -123,15 +123,14 @@ if (!defined("IN_FUSION")) { die("Access Denied"); }
 ?>
 
 	<div class="addcar"><a href="/cars/add/"><?php echo $locale['600']; ?></a></div>
-<?php
-	if (iADMIN && (iUSER_RIGHTS != "" || iUSER_RIGHTS != "C")) {
-?>
-	<div class="editcar"><a href="/<?php echo ADMIN ."cars.php".  $aidlink ."&action=edit&id=". $data['cars_id']; ?>" target="_blank"><?php echo $locale['601']; ?></a></div>
-	<div class="delcar"><a href="/<?php echo ADMIN ."cars.php".  $aidlink ."&action=delete&id=". $data['cars_id']; ?>" target="_blank" onclick="return DeleteOk();"><?php echo $locale['602']; ?></a></div>
-	<div class="clear"></div>
-<?php
-	}
-?>
+<?php if (iADMIN && (iUSER_RIGHTS != "" || iUSER_RIGHTS != "C")) { ?>
+		<div class="admin_buttons">
+			<ul>
+				<li><a href="/<?php echo ADMIN ."cars.php".  $aidlink ."&action=edit&id=". $data['cars_id']; ?>" target="_blank" class="button_edit" title="<?php echo $locale['601']; ?>"><i class="fa fa-pencil"></i></a></li>
+				<li><a href="/<?php echo ADMIN ."cars.php".  $aidlink ."&action=delete&id=". $data['cars_id']; ?>" target="_blank" class="button_delete" onclick="return DeleteOk();" title="<?php echo $locale['602']; ?>"><i class="fa fa-times"></i></a></li>
+			</ul>
+		</div>
+<?php } // if ADMIN ?>
 	<div class="carinfo row">
 		<div class="bloks blok1 col-sm-5">
 			<div class="blok_fields">
@@ -547,85 +546,58 @@ END;
 			</div>
 			<div class="hr"></div>
 
-			<?php
-				// $viewcompanent = viewcompanent("car", "name");
-				// $seourl_component = $viewcompanent['components_id'];
 
-				// $result_fatured = dbquery("SELECT
-				// 							marka_name,
-				// 							model_name,
-				// 							cars_imgocher,
-				// 							cars_qiymeti,
-				// 							cars_valyuta,
-				// 							seourl_url
-				// 					FROM ". DB_CARS ."
-				// 					INNER JOIN ". DB_MARKA ." ON ". DB_CARS .".cars_marka=". DB_MARKA .".marka_id
-				// 					INNER JOIN ". DB_MODEL ." ON ". DB_CARS .".cars_model=". DB_MODEL .".model_id 
-				// 					LEFT JOIN ". DB_SEOURL ." ON seourl_filedid=cars_id AND seourl_component=". $seourl_component ."
-				// 					WHERE cars_aktiv='1'
-				// 					AND cars_id!='". $data['cars_id'] ."'
-				// 					AND cars_marka='". $data['cars_marka'] ."'
-				// 					AND cars_model='". $data['cars_model'] ."'
-				// 					ORDER BY `cars_id` DESC
-				// 					LIMIT 0, 5");
-
-				// if (dbrows($result_fatured)) {
-				// 	$j_fatured=0;
-			?>
 			<div class="carbloks allcars">
 				<div class="title"><?php echo $data['marka_name'] ." ". $data['model_name'] ." ". $locale['508']; ?></div>
 				<div class="cars">
-				<?php
-				add_to_footer ("
-					<script type='text/javascript'>
-						<!--
-						$(document).ready(function(){
-							$('#car_all_models').html('<img src=\'". IMAGES ."ajax-loader.GIF\' alt=\'\' class=\'ajax-loader\' /><br /><img src=\'". IMAGES ."ajax-loading.gif\' alt=\'\' class=\'ajax-loading\'>');
-							$.ajax({
-								type: 'POST',
-								url: '/". INCLUDES ."Json/cars.php',
-								dataType: 'json',
-								data: {cars:'1', limit:'4', where:'cars_id!=". $data['cars_id'] ." AND cars_marka=". $data['cars_marka'] ." AND cars_model=". $data['cars_model'] ."'},
-								success: function(data){
-									var html = '';
-									var say = 0;
-									$.each(data,function(inx, item) { say++;
-										html += '<div class=\'items item'+ say +' col-sm-3\'>';
-										html += '	<div class=\'marka-model\'><a href=\'/'+ item.seourl_url +'\' target=\'_blank\'>'+ item.marka_name +' '+ item.model_name +'</a></div>';
-										html += '	<div class=\'images\'><a href=\'/'+ item.seourl_url +'\' target=\'_blank\'><img src=\''+ item.cars_imgocher +'\' alt=\''+ item.marka_name +' '+ item.model_name +'\'></a></div>';
-										html += '	<div class=\'cena\'><a href=\'/'+ item.seourl_url +'\' target=\'_blank\'>'+ item.cars_qiymeti +'</a></div>';
-										html += '</div>';
-										// console.log(item.marka_name +' - '+ item.model_name);
 
-										if (say==5) { say=0; }
-									});
-									$('#car_all_models').html( html );
+					<?php
+					add_to_footer ("
+			<script type='text/javascript'>
+				<!--
+				$(document).ready(function(){
+					$('#car_all_models').html('<div class=\"ajax-loader\"><img src=\"". IMAGES ."ajax-loader.GIF\" alt=\"\" /><br /><img src=\"". IMAGES ."ajax-loading.gif\" alt=\"\" /></div>');
+					$.ajax({
+						type: 'POST',
+						url: '/". INCLUDES ."Json/cars.php',
+						dataType: 'json',
+						data: {cars:'1', limit:'4', where:'cars_id!=". $data['cars_id'] ." AND cars_marka=". $data['cars_marka'] ." AND cars_model=". $data['cars_model'] ."'},
+						success: function(data){
+							var html = '';
+							var say = 0;
+							$.each(data,function(inx, item) { say++;
+								html += '<div class=\'items item'+ say +' col-sm-2\'>';
+								html += '	<a class=\'marka-model\' href=\'/'+ item.seourl_url +'\'>'+ item.marka_name +' '+ item.model_name +'</a>';
+								html += '	<a class=\'images\' href=\'/'+ item.seourl_url +'\'><img src=\''+ item.cars_imgocher +'\' alt=\''+ item.marka_name +' '+ item.model_name +'\'><span class=\"cena\">'+ item.cars_qiymeti +'</span></a>';
+								html += '	<span class=\'cars_ili col-sm-4\' title=\'". $locale['001'] ."\'><i class=\"fa fa-calendar\"></i> '+ item.cars_ili +'</span>';
+								html += '	<span class=\'yurush col-sm-8\' title=\'". $locale['002'] ."\'><i class=\"fa fa-history\"></i> '+ item.cars_yurush +' ". $locale['izmerenii_001'] ."</span>';
+								html += '</div>';
+								// console.log(item.marka_name +' - '+ item.model_name);
+
+								if (say==5) {
+									html += '<div class=\'clear\'></div>';
+									say=0;
 								}
 							});
-						});
-						//-->
-					</script>
-					");
+							$('#car_all_models').html( html );
+						}
+					});
+				});
+				//-->
+			</script>
+			");
 					?>
-					<div id="car_all_models" class="row"></div>
+					<div id="car_all_models" class="row clearfix"></div>
 
-					<?php /* while ($data_fatured = dbarray($result_fatured)) { $j_fatured++; ?>
-					<div class="items item<?php echo $j_fatured; ?>">
-						<div class="marka-model"><a href="<?php echo BASEDIR . $data_fatured['seourl_url']; ?>" target="_blank"><?php echo $data_fatured['marka_name']; ?> <?php echo $data_fatured['model_name']; ?></a></div>
-						<div class="images"><a href="<?php echo BASEDIR . $data_fatured['seourl_url']; ?>" target="_blank"><img src="<?php echo (empty($data_fatured['cars_imgocher']) ? IMAGES ."imagenotfound.jpg" : IMAGES . $settings['cars_foto_dir'] ."/rl". $data_fatured['cars_imgocher']); ?>" alt="<?php echo $data_fatured['marka_name']; ?> <?php echo $data_fatured['model_name']; ?>"></a></div>
-						<div class="cena"><a href="<?php echo BASEDIR . $data_fatured['seourl_url']; ?>" target="_blank"><?php echo viewcena($data_fatured['cars_qiymeti'], $data_fatured['cars_valyuta']); ?></a></div>
-					</div>
-					<?php } // db while */ ?>
-					<div class="clear-both"></div>
 					<?php // if ($j_fatured==5) { ?>
 					<div class="allcars"><a href="/cars/?marka=<?php echo $data['cars_marka']; ?>&model=<?php echo $data['cars_model']; ?>" target="_blank"><?php echo sprintf($locale['509'], $data['marka_name'] ." ". $data['model_name']); ?></a></div>
 					<?php // } // yesli bolshe 5 -i ?>
 				</div>
 			</div>
-			<?php // } // db query ?>
+
 
 		</div>
-		<div class="clear-both"></div>
+		<div class="clear"></div>
 
 		<div class="obyazatelno"><?php echo $locale['610']; ?></div>
 

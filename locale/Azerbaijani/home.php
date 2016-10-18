@@ -7,6 +7,10 @@ $locale['description'] = "Azərbaycanda avtomobillərin alqı-satqısı: yeni v�
 $locale['keywords'] = "Avto Azerbaycan, Auto Azerbaijan, auto azerbaijan, avtomobil elanları, alqı-satqı, avtomobil xəbərləri, avtomobil məqalələri, maşın, mashin, avtomobil kataloqu, elan yerləşdirmək, elan vermək, fotoqalereya, fon şəkilləri, avtomobil şəkilləri, şəkili, avtomobil şəkili, lizinq, avto kredit, aгtokredit, sərfəli qiymət, Auto, Avtomobil, Avtomobillər, Ehtiyat Hissə, Avtoservis, Avtomaqazin, Avtosalon, Avto elan, Avtokredit, kreditdə olan Avtomobillər, kreditdə olan Avtomobillərin satşı, kreditə avtomobil, Avtomobillərin kirayəsi, Rent a car, Rent a car in Azerbaijan, Rent car Baku, , Rent a car in Baku, Autosale, Avtosalon, autosalon, automasin, automashin, avtomasin, prodaza masin";
 $locale['h1'] = "AUTO SALE AZERBAIJAN";
 
+$locale['001'] = "Buraxılış ili";
+$locale['002'] = "Yürüş (km)";
+
+
 $locale['500'] = "";
 $locale['501'] = "Нет ни один объявлении";
 

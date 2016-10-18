@@ -225,6 +225,8 @@ $locale['recaptcha'] = "en";
 $locale['global_900'] = "Unable to convert HEX to DEC";
 
 
+
+
 //My
 $locale['global_901'] = "Dil seçimi";
 
@@ -244,6 +246,17 @@ $locale['skype'] = "<a href='skype:cars-az?chat' rel='nofollow'>cars-az</a>";
 
 //All rights reserved.
 $locale['copy'] = "&copy; <a href='http://cars-az.com/' target='_blank'>Cars-Az</a>  2015-". date("Y") ."<br />Bütün haqlar qorunur.";
+
+
+$locale['izmerenii_001'] = "km";
+$locale['izmerenii_002'] = "m";
+$locale['izmerenii_003'] = "sm";
+$locale['izmerenii_004'] = "mm";
+$locale['izmerenii_011'] = "t";
+$locale['izmerenii_012'] = "kq";
+$locale['izmerenii_013'] = "q";
+$locale['izmerenii_021'] = "sm<sup>3</sup>";
+$locale['izmerenii_022'] = "a.g.";
 
 $locale['veziyyet_1'] = "Yeni";
 $locale['veziyyet_2'] = "İşlənmiş";

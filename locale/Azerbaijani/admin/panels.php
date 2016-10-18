@@ -45,12 +45,17 @@ $locale['458'] = "Görmə izni:";
 $locale['459'] = "Lövhəni bütün səhifələrdə görüntülə";
 $locale['460'] = "Görüntülə";
 $locale['461'] = "Saxla";
+$locale['462'] = "Ограничение панели:";
+$locale['463'] = "Примеры:";
+$locale['464'] = "Исключить на этих страницах";
+$locale['465'] = "Включить на этих страницах";
 // Update/Add new Panel Errors
 $locale['470'] = "Lövhə adı qeyd edilməmişdir";
 $locale['471'] = "Lövhə adı artıq istifadədədir";
 $locale['472'] = "Lövhə tərkibi təyin edilməmişdir";
 $locale['473'] = "Lövhə təyin edilməmişdir";
 $locale['474'] = "İdarəçi şifrəsi yanlışdır.";
+$locale['475'] = "Вам необходимо поставить галочку \"Отображать на всех страницах\" при ограничении центральной панели по центру сверху или по центру снизу";
 // Update/Add new Panel Success/Fail
 $locale['480'] = "Lövhəni yenilə";
 $locale['481'] = "Lövhəni yeniləmək mümkün olmadı";
@@ -60,4 +65,5 @@ $locale['484'] = "Yeni lövhə əlavə etmək mümkün olmadı";
 $locale['485'] = "Yeni lövhə əlavə edildi";
 $locale['486'] = "Lövhə idarə etmə səhifəsinə qayıt";
 $locale['487'] = "Tənzimləmə səhifəsinə geri dön";
+$locale['488'] = "Порядок панелей обновлен.";
 ?>

@@ -22,24 +22,25 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 			<script type='text/javascript'>
 				<!--
 				$(document).ready(function(){
-					$('#home_last_cars').html('<img src=\'". IMAGES ."ajax-loader.GIF\' alt=\'\' class=\'ajax-loader\' /><br /><img src=\'". IMAGES ."ajax-loading.gif\' alt=\'\' class=\'ajax-loading\'>');
+					$('#home_last_cars').html('<div class=\"ajax-loader\"><img src=\"". IMAGES ."ajax-loader.GIF\" alt=\"\" /><br /><img src=\"". IMAGES ."ajax-loading.gif\" alt=\"\" /></div>');
 					$.ajax({
 						type: 'POST',
 						url: '/". INCLUDES ."Json/cars.php',
 						dataType: 'json',
-						data: {cars:'1', limit:'8'},
+						data: {cars:'1', limit:'10'},
 						success: function(data){
 							var html = '';
 							var say = 0;
 							$.each(data,function(inx, item) { say++;
-								html += '<div class=\'items item'+ say +' col-sm-3\'>';
-								html += '	<a class=\'marka-model\' href=\'/'+ item.seourl_url +'\' target=\'_blank\'>'+ item.marka_name +' '+ item.model_name +'</a>';
-								html += '	<a class=\'images\' href=\'/'+ item.seourl_url +'\' target=\'_blank\'><img src=\''+ item.cars_imgocher +'\' alt=\''+ item.marka_name +' '+ item.model_name +'\'></a>';
-								html += '	<a class=\'cena\' href=\'/'+ item.seourl_url +'\' target=\'_blank\'>'+ item.cars_qiymeti +'</a>';
+								html += '<div class=\'items item'+ say +' col-sm-2\'>';
+								html += '	<a class=\'marka-model\' href=\'/'+ item.seourl_url +'\'>'+ item.marka_name +' '+ item.model_name +'</a>';
+								html += '	<a class=\'images\' href=\'/'+ item.seourl_url +'\'><img src=\''+ item.cars_imgocher +'\' alt=\''+ item.marka_name +' '+ item.model_name +'\'><span class=\"cena\">'+ item.cars_qiymeti +'</span></a>';
+								html += '	<span class=\'cars_ili col-sm-4\' title=\'". $locale['001'] ."\'><i class=\"fa fa-calendar\"></i> '+ item.cars_ili +'</span>';
+								html += '	<span class=\'yurush col-sm-8\' title=\'". $locale['002'] ."\'><i class=\"fa fa-history\"></i> '+ item.cars_yurush +' ". $locale['izmerenii_001'] ."</span>';
 								html += '</div>';
 								// console.log(item.marka_name +' - '+ item.model_name);
 
-								if (say==4) {
+								if (say==5) {
 									html += '<div class=\'clear\'></div>';
 									say=0;
 								}
@@ -52,8 +53,7 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 			</script>
 			");
 			?>
-			<div id="home_last_cars" class="row"></div>
-			<div class="clear-both"></div>
+			<div id="home_last_cars" class="row clearfix"></div>
 			<div class="allcars"><a href="/cars/"><?php echo $locale['511']; ?></a></div>
 		</div>
 	</div>
@@ -132,24 +132,25 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 			<script type='text/javascript'>
 				<!--
 				$(document).ready(function(){
-					$('#home_random_cars').html('<img src=\'". IMAGES ."ajax-loader.GIF\' alt=\'\' class=\'ajax-loader\' /><br /><img src=\'". IMAGES ."ajax-loading.gif\' alt=\'\' class=\'ajax-loading\'>');
+					$('#home_random_cars').html('<div class=\"ajax-loader\"><img src=\"". IMAGES ."ajax-loader.GIF\" alt=\"\" /><br /><img src=\"". IMAGES ."ajax-loading.gif\" alt=\"\" /></div>');
 					$.ajax({
 						type: 'POST',
 						url: '/". INCLUDES ."Json/cars.php',
 						dataType: 'json',
-						data: {cars:'1', limit:'8', random:'1'},
+						data: {cars:'1', limit:'10', random:'1'},
 						success: function(data){
 							var html = '';
 							var say = 0;
 							$.each(data,function(inx, item) { say++;
-								html += '<div class=\'items item'+ say +' col-sm-3\'>';
-								html += '	<a class=\'marka-model\' href=\'/'+ item.seourl_url +'\' target=\'_blank\'>'+ item.marka_name +' '+ item.model_name +'</a>';
-								html += '	<a class=\'images\' href=\'/'+ item.seourl_url +'\' target=\'_blank\'><img src=\''+ item.cars_imgocher +'\' alt=\''+ item.marka_name +' '+ item.model_name +'\'></a>';
-								html += '	<a class=\'cena\' href=\'/'+ item.seourl_url +'\' target=\'_blank\'>'+ item.cars_qiymeti +'</a>';
+								html += '<div class=\'items item'+ say +' col-sm-2\'>';
+								html += '	<a class=\'marka-model\' href=\'/'+ item.seourl_url +'\'>'+ item.marka_name +' '+ item.model_name +'</a>';
+								html += '	<a class=\'images\' href=\'/'+ item.seourl_url +'\'><img src=\''+ item.cars_imgocher +'\' alt=\''+ item.marka_name +' '+ item.model_name +'\'><span class=\"cena\">'+ item.cars_qiymeti +'</span></a>';
+								html += '	<span class=\'cars_ili col-sm-4\' title=\'". $locale['001'] ."\'><i class=\"fa fa-calendar\"></i> '+ item.cars_ili +'</span>';
+								html += '	<span class=\'yurush col-sm-8\' title=\'". $locale['002'] ."\'><i class=\"fa fa-history\"></i> '+ item.cars_yurush +' ". $locale['izmerenii_001'] ."</span>';
 								html += '</div>';
 								// console.log(item.marka_name +' - '+ item.model_name);
 
-								if (say==4) {
+								if (say==5) {
 									html += '<div class=\'clear\'></div>';
 									say=0;
 								}
@@ -162,8 +163,7 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 			</script>
 			");
 			?>
-			<div id="home_random_cars" class="row"></div>
-			<div class="clear-both"></div>
+			<div id="home_random_cars" class="row clearfix"></div>
 			<div class="allcars"><a href="/cars/"><?php echo $locale['511']; ?></a></div>
 		</div>
 	</div>
@@ -186,24 +186,25 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 			<script type='text/javascript'>
 				<!--
 				$(document).ready(function(){
-					$('#home_vip_cars').html('<img src=\'". IMAGES ."ajax-loader.GIF\' alt=\'\' class=\'ajax-loader\' /><br /><img src=\'". IMAGES ."ajax-loading.gif\' alt=\'\' class=\'ajax-loading\'>');
+					$('#home_vip_cars').html('<div class=\"ajax-loader\"><img src=\"". IMAGES ."ajax-loader.GIF\" alt=\"\" /><br /><img src=\"". IMAGES ."ajax-loading.gif\" alt=\"\" /></div>');
 					$.ajax({
 						type: 'POST',
 						url: '/". INCLUDES ."Json/cars.php',
 						dataType: 'json',
-						data: {cars:'1', limit:'8', where:'(cars_vip=1 || cars_vip=4 || cars_vip=6)'},
+						data: {cars:'1', limit:'10', where:'(cars_vip=1 || cars_vip=4 || cars_vip=6)'},
 						success: function(data){
 							var html = '';
 							var say = 0;
 							$.each(data,function(inx, item) { say++;
-								html += '<div class=\'items item'+ say +' col-sm-3\'>';
-								html += '	<a class=\'marka-model\' href=\'/'+ item.seourl_url +'\' target=\'_blank\'>'+ item.marka_name +' '+ item.model_name +'</a>';
-								html += '	<a class=\'images\' href=\'/'+ item.seourl_url +'\' target=\'_blank\'><img src=\''+ item.cars_imgocher +'\' alt=\''+ item.marka_name +' '+ item.model_name +'\'></a>';
-								html += '	<a class=\'cena\' href=\'/'+ item.seourl_url +'\' target=\'_blank\'>'+ item.cars_qiymeti +'</a>';
+								html += '<div class=\'items item'+ say +' col-sm-2\'>';
+								html += '	<a class=\'marka-model\' href=\'/'+ item.seourl_url +'\'>'+ item.marka_name +' '+ item.model_name +'</a>';
+								html += '	<a class=\'images\' href=\'/'+ item.seourl_url +'\'><img src=\''+ item.cars_imgocher +'\' alt=\''+ item.marka_name +' '+ item.model_name +'\'><span class=\"cena\">'+ item.cars_qiymeti +'</span></a>';
+								html += '	<span class=\'cars_ili col-sm-4\' title=\'". $locale['001'] ."\'><i class=\"fa fa-calendar\"></i> '+ item.cars_ili +'</span>';
+								html += '	<span class=\'yurush col-sm-8\' title=\'". $locale['002'] ."\'><i class=\"fa fa-history\"></i> '+ item.cars_yurush +' ". $locale['izmerenii_001'] ."</span>';
 								html += '</div>';
 								// console.log(item.marka_name +' - '+ item.model_name);
 
-								if (say==4) {
+								if (say==5) {
 									html += '<div class=\'clear\'></div>';
 									say=0;
 								}
@@ -216,8 +217,7 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 			</script>
 			");
 			?>
-			<div id="home_vip_cars" class="row"></div>
-			<div class="clear-both"></div>
+			<div id="home_vip_cars" class="row clearfix"></div>
 			<!-- <div class="allcars"><a href="/cars/"><?php echo $locale['511']; ?></a></div> -->
 		</div>
 	</div>
@@ -238,24 +238,25 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 			<script type='text/javascript'>
 				<!--
 				$(document).ready(function(){
-					$('#home_moto_cars').html('<img src=\'". IMAGES ."ajax-loader.GIF\' alt=\'\' class=\'ajax-loader\' /><br /><img src=\'". IMAGES ."ajax-loading.gif\' alt=\'\' class=\'ajax-loading\'>');
+					$('#home_moto_cars').html('<div class=\"ajax-loader\"><img src=\"". IMAGES ."ajax-loader.GIF\" alt=\"\" /><br /><img src=\"". IMAGES ."ajax-loading.gif\" alt=\"\" /></div>');
 					$.ajax({
 						type: 'POST',
 						url: '/". INCLUDES ."Json/cars.php',
 						dataType: 'json',
-						data: {cars:'1', limit:'8', where:'cars_ban=2'},
+						data: {cars:'1', limit:'10', where:'cars_ban=2'},
 						success: function(data){
 							var html = '';
 							var say = 0;
 							$.each(data,function(inx, item) { say++;
-								html += '<div class=\'items item'+ say +' col-sm-3\'>';
-								html += '	<a class=\'marka-model\' href=\'/'+ item.seourl_url +'\' target=\'_blank\'>'+ item.marka_name +' '+ item.model_name +'</a>';
-								html += '	<a class=\'images\' href=\'/'+ item.seourl_url +'\' target=\'_blank\'><img src=\''+ item.cars_imgocher +'\' alt=\''+ item.marka_name +' '+ item.model_name +'\'></a>';
-								html += '	<a class=\'cena\' href=\'/'+ item.seourl_url +'\' target=\'_blank\'>'+ item.cars_qiymeti +'</a>';
+								html += '<div class=\'items item'+ say +' col-sm-2\'>';
+								html += '	<a class=\'marka-model\' href=\'/'+ item.seourl_url +'\'>'+ item.marka_name +' '+ item.model_name +'</a>';
+								html += '	<a class=\'images\' href=\'/'+ item.seourl_url +'\'><img src=\''+ item.cars_imgocher +'\' alt=\''+ item.marka_name +' '+ item.model_name +'\'><span class=\"cena\">'+ item.cars_qiymeti +'</span></a>';
+								html += '	<span class=\'cars_ili col-sm-4\' title=\'". $locale['001'] ."\'><i class=\"fa fa-calendar\"></i> '+ item.cars_ili +'</span>';
+								html += '	<span class=\'yurush col-sm-8\' title=\'". $locale['002'] ."\'><i class=\"fa fa-history\"></i> '+ item.cars_yurush +' ". $locale['izmerenii_001'] ."</span>';
 								html += '</div>';
 								// console.log(item.marka_name +' - '+ item.model_name);
 
-								if (say==4) {
+								if (say==5) {
 									html += '<div class=\'clear\'></div>';
 									say=0;
 								}
@@ -268,8 +269,7 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 			</script>
 			");
 			?>
-			<div id="home_moto_cars" class="row"></div>
-			<div class="clear-both"></div>
+			<div id="home_moto_cars" class="row clearfix"></div>
 			<div class="allcars"><a href="/cars/?ban=2"><?php echo $locale['536']; ?></a></div>
 		</div>
 	</div>
@@ -283,35 +283,43 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 
 	<div class="salonbloks autosalons">
 		<div class="title"><?php echo $locale['540']; ?></div>
-		<div class="salon row">
-			<?php
-				$viewcompanent = viewcompanent("salon", "name");
-				$seourl_component = $viewcompanent['components_id'];
+		<div class="salon">
 
-				$salon_result = dbquery("SELECT
-											salon_name,
-											salon_imgocher,
-											seourl_url
-									FROM ". DB_SALONS ."
-									LEFT JOIN ". DB_SEOURL ." ON seourl_filedid=salon_id AND seourl_component=". $seourl_component ."
-									WHERE (salon_aktiv='1' || salon_aktiv='4') AND (salon_vip='1'||salon_vip='4'||salon_vip='6')
-									ORDER BY RAND()
-									LIMIT 0, 10");
-				if (dbrows($salon_result)) {
-					$salon_j=0;
-					while ($salon_data = dbarray($salon_result)) { $salon_j++;
-			?>
-			<div class="items item<?php echo $salon_j; ?> col-sm-2">
-				<a class="salon_name" href="/<?php echo $salon_data['seourl_url']; ?>" target="_blank"><?php echo $salon_data['salon_name']; ?></a>
-				<a class="images" href="/<?php echo  $salon_data['seourl_url']; ?>" target="_blank"><img src="<?php echo (empty($salon_data['salon_imgocher']) ? IMAGES ."imagenotfound.jpg" : IMAGES . $settings['salons_foto_dir'] ."/sm". $salon_data['salon_imgocher']); ?>" alt="<?php echo $salon_data['salon_name']; ?>"></a>
-			</div>
 			<?php
-					} // db whille
-				} else {
-					echo $locale['501'];
-				} // db query
+			add_to_footer ("
+			<script type='text/javascript'>
+				<!--
+				$(document).ready(function(){
+					$('#home_autosalons').html('<div class=\"ajax-loader\"><img src=\"". IMAGES ."ajax-loader.GIF\" alt=\"\" /><br /><img src=\"". IMAGES ."ajax-loading.gif\" alt=\"\" /></div>');
+					$.ajax({
+						type: 'POST',
+						url: '/". INCLUDES ."Json/salons.php',
+						dataType: 'json',
+						data: {salons:'1', limit:'15', where:'(salon_vip=1 || salon_vip=4 || salon_vip=6)'},
+						success: function(data){
+							var html = '';
+							var say = 0;
+							$.each(data,function(inx, item) { say++;
+								html += '<div class=\'items item'+ say +' col-sm-2\'>';
+								html += '	<a class=\'salon_name\' href=\'/'+ item.seourl_url +'\'>'+ item.salon_name +'</a>';
+								html += '	<a class=\'images\' href=\'/'+ item.seourl_url +'\'><img src=\''+ item.salon_imgocher +'\' alt=\''+ item.salon_name +'\'></a>';
+								html += '</div>';
+								// console.log(item.marka_name +' - '+ item.model_name);
+
+								if (say==5) {
+									html += '<div class=\'clear\'></div>';
+									say=0;
+								}
+							});
+							$('#home_autosalons').html( html );
+						}
+					});
+				});
+				//-->
+			</script>
+			");
 			?>
-			<div class="clear"></div>
+			<div id="home_autosalons" class="row clearfix"></div>
 		</div>
 	</div>
 
@@ -324,8 +332,55 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 
 
 
-<div class="marks_home row">
+<div class="marks_home">
+	<?php
+		add_to_footer ("<script type='text/javascript'>
+		<!--
+		function carscount(marka_id=0) {
+			$.ajax({
+				type: 'POST',
+				url: '/". INCLUDES ."Json/cars_count.php',
+				dataType: 'json',
+				data: {marka_id: marka_id},
+				success: function(data){
+					if (data>0) {
+						console.log('dada: ', data);
+						$('#home_marks .marka'+ marka_id +' .carcount').text( '('+ data +')' );
+						$('#home_marks .marka'+ marka_id).removeClass( 'disabled');
+					} else {
+						$('#home_marks .marka'+ marka_id +' .carcount').text( '(0)' );
+						$('#home_marks .marka'+ marka_id).removeAttr( 'href');
+					}
+				}
+			});  
+		} // function carscount
+		
+		$(document).ready(function(){
+			$('#home_marks').html('<div class=\"ajax-loader\"><img src=\"". IMAGES ."ajax-loader.GIF\" alt=\"\" /><br /><img src=\"". IMAGES ."ajax-loading.gif\" alt=\"\" /></div>');
+			$.ajax({
+				type: 'POST',
+				url: '/includes/Json/marka.php',
+				dataType: 'json',
+				data: { marka_submit: 1 },
+				success: function(data){
+					var html = '';
+					$.each(data,function(inx, item) {
+					
+						setTimeout(carscount(inx), 1000);
+						
+						html += '<a href=\"/cars/?marka='+ inx +'\" class=\"allmarka marka'+ inx +' col-sm-3 clearfix disabled\"><span class=\"logos\"><img src=\"". IMAGES . $settings['markalogos_dir'] ."/'+ inx +'.gif\" alt=\"'+ item +'\"></span><span class=\"name\">'+ item +'</span><span class=\"carcount\"><img src=\"". IMAGES ."ajax-loading_small.gif\" alt=\"\" class=\"ajax-loader_small\"></span></a>';
+					});
+					$('#home_marks').html( html );
+				}
+			});
+		});
+		//-->
+	</script>
+	");
+	?>
+	<div id="home_marks" class="row clearfix"></div>
 <?php
+/*
 	$marka_result = dbquery("SELECT
 												marka_id,
 												marka_name
@@ -376,6 +431,7 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 	} else {
 		echo $locale['501'];
 	} // db query
+*/
 ?>
 	<div class="clear"></div>
 </div>

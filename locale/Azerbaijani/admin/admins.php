@@ -33,6 +33,8 @@ $locale['445'] = "Hamısı seç";
 $locale['446'] = "Heç birini seçmə";
 $locale['447'] = "İdarəçi şifrəsi:";
 $locale['448'] = "İdarəçi imtiyazlarını saxla";
+$locale['449'] = "Settings";
+$locale['450'] = "Check secure";
 // Popup Error/Warning Messages
 $locale['460'] = "Bu İdarəçi silinsinmi?";
 // Remove Admin confirmation

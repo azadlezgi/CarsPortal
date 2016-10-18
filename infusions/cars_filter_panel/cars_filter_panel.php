@@ -8,9 +8,10 @@
 	<div class="carsfilter">
 		<div class="fileds filter_marka col-sm-3">
 			<label for="filter_marka"><?php echo $locale['infusions_cfp_010']; ?></label>
-			<select class="select" name="marka" id="filter_marka" onchange="dynamicSelect('filter_marka', 'filter_model');">
-				<option value=""<?php echo ((INT)$_GET['marka']=="" ? " selected" : ""); ?>><?php echo $locale['infusions_cfp_001']; ?></option>
+			<select class="select" name="marka" id="filter_marka" size="1">
+				<option value=""><?php echo $locale['infusions_cfp_001']; ?></option>
 	<?php
+	/*
 		$filter_result = dbquery("SELECT
 									marka_id,
 									marka_name
@@ -23,14 +24,16 @@
 	<?php
 			} // db whille
 		} // db query
+	*/
 	?>
 			</select>
 		</div>
 		<div class="fileds filter_model col-sm-3">
 			<label for="filter_model"><?php echo $locale['infusions_cfp_011']; ?></label>
-			<select class="select" name="model" id="filter_model">
-				<option value=""<?php echo ((INT)$_GET['model']=="" ? " selected" : ""); ?>><?php echo $locale['infusions_cfp_001']; ?></option>
+			<select class="select" name="model" id="filter_model" size="1">
+				<option value=""><?php echo $locale['infusions_cfp_001']; ?></option>
 	<?php
+/*
 		$filter_result = dbquery("SELECT
 									model_id,
 									model_name,
@@ -44,6 +47,7 @@
 	<?php
 			} // db whille
 		} // db query
+*/
 	?>
 			</select>
 		</div>
@@ -168,6 +172,60 @@
 add_to_footer ("
 <script type='text/javascript'>
 	<!--
+	$(document).ready(function(){
+		$('#filter #filter_marka').prop( 'disabled', true );
+		$('#filter #filter_model').prop( 'disabled', true );
+		$.ajax({
+			type: 'POST',
+			url: '/includes/Json/marka.php',
+			dataType: 'json',
+			data: { marka_submit: 1 },
+			success: function(data){
+				$('#filter #filter_marka').prop( 'disabled', false );
+				var html = '';
+				$.each(data,function(inx, item) {
+				    if (inx==". (isset($_GET['marka']) ? (INT)$_GET['marka'] : 0) .") {
+						html += '<option value=\"'+ inx +'\" selected>'+ item +'</option>';
+				    } else {
+						html += '<option value=\"'+ inx +'\">'+ item +'</option>';
+				    }
+					// console.log(ind, item);
+				});
+				$('#filter #filter_marka').append( html );
+			}
+		});
+	});
+	//-->
+</script>
+");
+
+
+add_to_footer ("
+<script type='text/javascript'>
+	<!--
+	function modelselect(marka_id=0, model_id=0) {
+	    $('#filter #filter_model').empty().append( '<option value=\"\">". $locale['infusions_cfp_001'] ."</option>' );
+		$.ajax({
+			type: 'POST',
+			url: '/includes/Json/model.php',
+			dataType: 'json',
+			data: { marka_submit: marka_id },
+			success: function(data){
+				$('#filter #filter_model').prop( 'disabled', false );
+				var html = '';
+				$.each(data,function(inx, item) {
+					if (inx==model_id) {
+						html += '<option value=\"'+ inx +'\" selected>'+ item +'</option>';
+					} else {
+						html += '<option value=\"'+ inx +'\">'+ item +'</option>';
+					}
+					// console.log(ind, item);
+				});
+				$('#filter #filter_model').append( html );
+			}
+		});
+	} // function modelselect
+	
 	function filtercount() {
 		var filter_marka = $('#filter #filter_marka').val();
 		var filter_model = $('#filter #filter_model').val();
@@ -208,6 +266,11 @@ add_to_footer ("
 	$(document).ready(function() {
 		$('#filter #filter_marka').change(function() {
 			filtercount();
+			var marka_id = 0;
+			$( '#filter #filter_marka option:selected' ).each(function() {
+				marka_id = $( this ).val();
+			});
+			modelselect(marka_id, ". (isset($_GET['model']) && (INT)$_GET['model']>0 ? (INT)$_GET['model'] : 0) .");
 		});
 		$('#filter #filter_model').change(function() {
 			filtercount();
@@ -251,6 +314,19 @@ add_to_footer ("
 	//-->
 </script>
 ");
+
+if (isset($_GET['marka']) && (INT)$_GET['marka']>0 ) {
+	add_to_footer ("
+	<script type='text/javascript'>
+		<!--
+		$(document).ready(function(){
+			modelselect(". (INT)$_GET['marka'] .", ". (isset($_GET['model']) && (INT)$_GET['model']>0 ? (INT)$_GET['model'] : 0) .");
+		});
+		//-->
+	</script>
+	");
+} // isset get marka
+
 add_to_footer ("
 <script type='text/javascript'>
 	<!--
@@ -307,13 +383,6 @@ add_to_footer ('
 	-->
 </script>
 ');
-add_to_footer ("
-<script type='text/javascript'>
-	<!--
-	dynamicSelect('filter_marka', 'filter_model');
-	//-->
-</script>
-");
 add_to_footer ("
 <script type='text/javascript'>
 	<!--

@@ -21,6 +21,8 @@
 														marka_name,
 														model_name,
 														cars_id,
+														cars_ili,
+														cars_yurush,
 														cars_imgocher,
 														cars_qiymeti,
 														cars_valyuta,
@@ -43,6 +45,8 @@
 				$cars_array[$j]['cars_id'] = $data['cars_id'];
 				$cars_array[$j]['marka_name'] = $data['marka_name'];
 				$cars_array[$j]['model_name'] = $data['model_name'];
+                $cars_array[$j]['cars_ili'] = $data['cars_ili'];
+                $cars_array[$j]['cars_yurush'] = $data['cars_yurush'];
 				$cars_array[$j]['cars_imgocher'] = (empty($data['cars_imgocher']) ? IMAGES ."imagenotfound.jpg" : IMAGES . $settings['cars_foto_dir'] ."/sm". $data['cars_imgocher']);
 				$cars_array[$j]['cars_qiymeti'] = viewcena($data['cars_qiymeti'], $data['cars_valyuta']);
 				$cars_array[$j]['cars_ban'] = $data['cars_ban'];
