@@ -30,7 +30,7 @@ echo "<title>". $settings['sitename'] ."</title>\n";
 echo "<meta name='description' content='". $settings['description'] ."' />\n";
 // echo "<meta name='keywords' content='". $settings['keywords'] ."' />\n";
 // add_to_footer ("<link rel='stylesheet' href='". THEME ."styles.css' type='text/css' media='screen' />");
-echo "<link rel='stylesheet' href='/". THEME ."styles.css' type='text/css' media='screen' />\n";
+// echo "<link rel='stylesheet' href='/". THEME ."styles.css' type='text/css' media='screen' />\n";
 // echo "<meta http-equiv='Cache-Control' content='max-age=604800, must-revalidate' />\n";
 if (file_exists(THEME ."images/favicon.ico")) {
 echo "<link rel='shortcut icon' href='/". THEME ."images/favicon.ico' type='image/x-icon' />\n";
