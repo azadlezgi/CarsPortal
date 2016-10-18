@@ -60,65 +60,11 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 
 	<div class="contentbanner">
 		<div class="banner banner0">
-			<?php if (FUSION_HOST=="cars-az.com") { ?>
-				<!-- Yayimla - ad code starts -->
-				<span id="show_ads_46aa031ab4e6394b219b201322e64a57_2529"></span>
-				<script language="javascript" type="text/javascript" src="http://yayimla.az/net/show-ads.js"></script>
-				<script language="javascript">
-				if (window.ads_46aa031ab4e6394b219b201322e64a57 ){ ads_46aa031ab4e6394b219b201322e64a57+= 1;}else{ ads_46aa031ab4e6394b219b201322e64a57 =1;}
-				ads_46aa031ab4e6394b219b201322e64a57_2529=ads_46aa031ab4e6394b219b201322e64a57;
-				timer_46aa031ab4e6394b219b201322e64a572529=window.setInterval(function(){
-				if(window.gc4ca4238a0b923820dcc509a6f75849b){
-				setTimeout("showAdsforContent(2529,300,250,'http://yayimla.az/net/publisher-show-ads.php',"+ads_46aa031ab4e6394b219b201322e64a57_2529+",'ads_46aa031ab4e6394b219b201322e64a57')",1000*(ads_46aa031ab4e6394b219b201322e64a57_2529 -1));
-				window.clearInterval(timer_46aa031ab4e6394b219b201322e64a572529);}},100);
-				ads_46aa031ab4e6394b219b201322e64a57_2529_position=0;
-				</script>
-				<!-- Yayimla - ad code  ends -->
-
-				<!-- Yayimla - ad code starts -->
-				<span id="show_ads_46aa031ab4e6394b219b201322e64a57_2530"></span>
-				<script language="javascript" type="text/javascript" src="http://yayimla.az/net/show-ads.js"></script>
-				<script language="javascript">
-				if (window.ads_46aa031ab4e6394b219b201322e64a57 ){ ads_46aa031ab4e6394b219b201322e64a57+= 1;}else{ ads_46aa031ab4e6394b219b201322e64a57 =1;}
-				ads_46aa031ab4e6394b219b201322e64a57_2530=ads_46aa031ab4e6394b219b201322e64a57;
-				timer_46aa031ab4e6394b219b201322e64a572530=window.setInterval(function(){
-				if(window.gc4ca4238a0b923820dcc509a6f75849b){
-				setTimeout("showAdsforContent(2530,300,250,'http://yayimla.az/net/publisher-show-ads.php',"+ads_46aa031ab4e6394b219b201322e64a57_2530+",'ads_46aa031ab4e6394b219b201322e64a57')",1000*(ads_46aa031ab4e6394b219b201322e64a57_2530 -1));
-				window.clearInterval(timer_46aa031ab4e6394b219b201322e64a572530);}},100);
-				ads_46aa031ab4e6394b219b201322e64a57_2530_position=0;
-				</script>
-				<!-- Yayimla - ad code  ends -->
-			<?php } else if (FUSION_HOST=="ru.cars-az.com") { ?>
-				<!-- Yayimla - ad code starts -->
-				<span id="show_ads_46aa031ab4e6394b219b201322e64a57_2598"></span>
-				<script language="javascript" type="text/javascript" src="http://yayimla.az/net/show-ads.js"></script>
-				<script language="javascript">
-				if (window.ads_46aa031ab4e6394b219b201322e64a57 ){ ads_46aa031ab4e6394b219b201322e64a57+= 1;}else{ ads_46aa031ab4e6394b219b201322e64a57 =1;}
-				ads_46aa031ab4e6394b219b201322e64a57_2598=ads_46aa031ab4e6394b219b201322e64a57;
-				timer_46aa031ab4e6394b219b201322e64a572598=window.setInterval(function(){
-				if(window.gc4ca4238a0b923820dcc509a6f75849b){
-				setTimeout("showAdsforContent(2598,300,250,'http://yayimla.az/net/publisher-show-ads.php',"+ads_46aa031ab4e6394b219b201322e64a57_2598+",'ads_46aa031ab4e6394b219b201322e64a57')",1000*(ads_46aa031ab4e6394b219b201322e64a57_2598 -1));
-				window.clearInterval(timer_46aa031ab4e6394b219b201322e64a572598);}},100);
-				ads_46aa031ab4e6394b219b201322e64a57_2598_position=0;
-				</script>
-				<!-- Yayimla - ad code  ends -->
-
-				<!-- Yayimla - ad code starts -->
-				<span id="show_ads_46aa031ab4e6394b219b201322e64a57_2600"></span>
-				<script language="javascript" type="text/javascript" src="http://yayimla.az/net/show-ads.js"></script>
-				<script language="javascript">
-				if (window.ads_46aa031ab4e6394b219b201322e64a57 ){ ads_46aa031ab4e6394b219b201322e64a57+= 1;}else{ ads_46aa031ab4e6394b219b201322e64a57 =1;}
-				ads_46aa031ab4e6394b219b201322e64a57_2600=ads_46aa031ab4e6394b219b201322e64a57;
-				timer_46aa031ab4e6394b219b201322e64a572600=window.setInterval(function(){
-				if(window.gc4ca4238a0b923820dcc509a6f75849b){
-				setTimeout("showAdsforContent(2600,300,250,'http://yayimla.az/net/publisher-show-ads.php',"+ads_46aa031ab4e6394b219b201322e64a57_2600+",'ads_46aa031ab4e6394b219b201322e64a57')",1000*(ads_46aa031ab4e6394b219b201322e64a57_2600 -1));
-				window.clearInterval(timer_46aa031ab4e6394b219b201322e64a572600);}},100);
-				ads_46aa031ab4e6394b219b201322e64a57_2600_position=0;
-				</script>
-				<!-- Yayimla - ad code  ends -->
-			<?php } else if (FUSION_HOST=="en.cars-az.com") { ?>
-
-			<?php } ?>
+<?php add_to_footer ("
+<script async src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'></script>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+"); ?>
+			<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4406631458345397" data-ad-slot="9074734469" data-ad-format="auto"></ins>
 		</div>
 		<?php // echo showbanners(13, "center"); ?>
 	</div>
@@ -223,8 +169,11 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 	</div>
 
 	<div class="contentbanner">
+		<div class="banner banner0">
+			<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4406631458345397" data-ad-slot="4306457667" data-ad-format="auto"></ins>
+		</div>
 		<?php
-			echo showbanners(13, "center");
+			// echo showbanners(13, "center");
 			// echo showbanners(15, "center");
 		?>
 	</div>
@@ -275,8 +224,11 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 	</div>
 
 	<div class="contentbanner">
+		<div class="banner banner0">
+			<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4406631458345397" data-ad-slot="4945586069" data-ad-format="auto"></ins>
+		</div>
 		<?php
-			echo showbanners(16, "center");
+			// echo showbanners(16, "center");
 		?>
 	</div>
 
@@ -325,8 +277,11 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 
 
 	<div class="contentbanner">
+		<div class="banner banner0">
+			<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4406631458345397" data-ad-slot="1712918063" data-ad-format="auto"></ins>
+		</div>
 		<?php
-			echo showbanners(17, "center");
+			// echo showbanners(17, "center");
 		?>
 	</div>
 
@@ -344,7 +299,7 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 				data: {marka_id: marka_id},
 				success: function(data){
 					if (data>0) {
-						console.log('dada: ', data);
+						// console.log('dada: ', data);
 						$('#home_marks .marka'+ marka_id +' .carcount').text( '('+ data +')' );
 						$('#home_marks .marka'+ marka_id).removeClass( 'disabled');
 					} else {
@@ -438,13 +393,16 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 
 
 	<div class="contentbanner">
+		<div class="banner banner0">
+			<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4406631458345397" data-ad-slot="5305512867" data-ad-format="auto"></ins>
+		</div>
 		<?php
-			echo showbanners(18, "center");
+			// echo showbanners(18, "center");
 		?>
 	</div>
 
 
-<?/*
+
 	<div class="facebook-block">
 		<?php
 			// Facebook block
@@ -457,18 +415,19 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 			} 
 		?>
 		<div id="fb-root"></div>
+		<?php add_to_footer ("
 		<script>(function(d, s, id) {
 		  var js, fjs = d.getElementsByTagName(s)[0];
 		  if (d.getElementById(id)) return;
 		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/<?php echo $facemez; ?>/all.js#xfbml=1";
+		  js.src = \"//connect.facebook.net/<?php echo $facemez; ?>/all.js#xfbml=1\";
 		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
-		<div class="fb-like-box" data-href="https://www.facebook.com/Autosaleaz" data-width="605" data-height="556" data-show-faces="true" data-stream="false" data-show-border="true" data-header="true"></div>					
+		}(document, 'script', 'facebook-jssdk'));</script>"); ?>
+		<div class="fb-like-box" data-href="https://www.facebook.com/Autosaleaz" data-width="100%" data-height="556" data-show-faces="true" data-stream="false" data-show-border="true" data-header="true"></div>
 	</div>
 
 <?php
-*/
+
 
 	closetable();
 ?>
