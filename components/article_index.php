@@ -90,8 +90,8 @@ if (dbrows($c_result)) {
 					WHERE article_status='1'
 					AND article_date<'". FUSION_TODAY ."'
 					AND article_cat='". $article_cat_id ."'
-					ORDER BY article_order ASC
 					LIMIT 0, 3");
+//			ORDER BY article_order ASC
 
 			if (dbrows($result)) {
 
@@ -134,6 +134,8 @@ if (dbrows($c_result)) {
 			} // db query
 		} // article_cat_access
 	} // db whille
+				} // db query
+			} // db whille
 } // db query
 echo "</div>\n";
 

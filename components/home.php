@@ -32,18 +32,20 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 							var html = '';
 							var say = 0;
 							$.each(data,function(inx, item) { say++;
-								html += '<div class=\'items item'+ say +' col-sm-2\'>';
+								html += '<div class=\'items item'+ say +' col-xs-6 col-sm-4 col-md-3 col-lg-3a\'>';
+								html += '<div>';
 								html += '	<a class=\'marka-model\' href=\'/'+ item.seourl_url +'\'>'+ item.marka_name +' '+ item.model_name +'</a>';
 								html += '	<a class=\'images\' href=\'/'+ item.seourl_url +'\'><img src=\''+ item.cars_imgocher +'\' alt=\''+ item.marka_name +' '+ item.model_name +'\'><span class=\"cena\">'+ item.cars_qiymeti +'</span></a>';
 								html += '	<span class=\'cars_ili col-sm-4\' title=\'". $locale['001'] ."\'><i class=\"fa fa-calendar\"></i> '+ item.cars_ili +'</span>';
 								html += '	<span class=\'yurush col-sm-8\' title=\'". $locale['002'] ."\'><i class=\"fa fa-history\"></i> '+ item.cars_yurush +' ". $locale['izmerenii_001'] ."</span>';
 								html += '</div>';
+								html += '</div>';
 								// console.log(item.marka_name +' - '+ item.model_name);
 
-								if (say==5) {
-									html += '<div class=\'clear\'></div>';
-									say=0;
-								}
+//								if (say==5) {
+//									html += '<div class=\'clear\'></div>';
+//									say=0;
+//								}
 							});
 							$('#home_last_cars').html( html );
 						}
@@ -60,11 +62,11 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 
 	<div class="contentbanner">
 		<div class="banner banner0">
-<?php add_to_footer ("
-<script async src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'></script>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-"); ?>
+			<?php add_to_footer ("<script async src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'></script>"); ?>
 			<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4406631458345397" data-ad-slot="9074734469" data-ad-format="auto"></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
 		</div>
 		<?php // echo showbanners(13, "center"); ?>
 	</div>
@@ -88,18 +90,20 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 							var html = '';
 							var say = 0;
 							$.each(data,function(inx, item) { say++;
-								html += '<div class=\'items item'+ say +' col-sm-2\'>';
+								html += '<div class=\'items item'+ say +' col-xs-6 col-sm-4 col-md-3 col-lg-3a\'>';
+								html += '<div>';
 								html += '	<a class=\'marka-model\' href=\'/'+ item.seourl_url +'\'>'+ item.marka_name +' '+ item.model_name +'</a>';
 								html += '	<a class=\'images\' href=\'/'+ item.seourl_url +'\'><img src=\''+ item.cars_imgocher +'\' alt=\''+ item.marka_name +' '+ item.model_name +'\'><span class=\"cena\">'+ item.cars_qiymeti +'</span></a>';
 								html += '	<span class=\'cars_ili col-sm-4\' title=\'". $locale['001'] ."\'><i class=\"fa fa-calendar\"></i> '+ item.cars_ili +'</span>';
 								html += '	<span class=\'yurush col-sm-8\' title=\'". $locale['002'] ."\'><i class=\"fa fa-history\"></i> '+ item.cars_yurush +' ". $locale['izmerenii_001'] ."</span>';
 								html += '</div>';
+								html += '</div>';
 								// console.log(item.marka_name +' - '+ item.model_name);
 
-								if (say==5) {
-									html += '<div class=\'clear\'></div>';
-									say=0;
-								}
+//								if (say==5) {
+//									html += '<div class=\'clear\'></div>';
+//									say=0;
+//								}
 							});
 							$('#home_random_cars').html( html );
 						}
@@ -142,18 +146,20 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 							var html = '';
 							var say = 0;
 							$.each(data,function(inx, item) { say++;
-								html += '<div class=\'items item'+ say +' col-sm-2\'>';
+								html += '<div class=\'items item'+ say +' col-xs-6 col-sm-4 col-md-3 col-lg-3a\'>';
+								html += '<div>';
 								html += '	<a class=\'marka-model\' href=\'/'+ item.seourl_url +'\'>'+ item.marka_name +' '+ item.model_name +'</a>';
 								html += '	<a class=\'images\' href=\'/'+ item.seourl_url +'\'><img src=\''+ item.cars_imgocher +'\' alt=\''+ item.marka_name +' '+ item.model_name +'\'><span class=\"cena\">'+ item.cars_qiymeti +'</span></a>';
 								html += '	<span class=\'cars_ili col-sm-4\' title=\'". $locale['001'] ."\'><i class=\"fa fa-calendar\"></i> '+ item.cars_ili +'</span>';
 								html += '	<span class=\'yurush col-sm-8\' title=\'". $locale['002'] ."\'><i class=\"fa fa-history\"></i> '+ item.cars_yurush +' ". $locale['izmerenii_001'] ."</span>';
 								html += '</div>';
+								html += '</div>';
 								// console.log(item.marka_name +' - '+ item.model_name);
 
-								if (say==5) {
-									html += '<div class=\'clear\'></div>';
-									say=0;
-								}
+//								if (say==5) {
+//									html += '<div class=\'clear\'></div>';
+//									say=0;
+//								}
 							});
 							$('#home_vip_cars').html( html );
 						}
@@ -171,6 +177,9 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 	<div class="contentbanner">
 		<div class="banner banner0">
 			<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4406631458345397" data-ad-slot="4306457667" data-ad-format="auto"></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
 		</div>
 		<?php
 			// echo showbanners(13, "center");
@@ -197,18 +206,20 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 							var html = '';
 							var say = 0;
 							$.each(data,function(inx, item) { say++;
-								html += '<div class=\'items item'+ say +' col-sm-2\'>';
+								html += '<div class=\'items item'+ say +' col-xs-6 col-sm-4 col-md-3 col-lg-3a\'>';
+								html += '<div>';
 								html += '	<a class=\'marka-model\' href=\'/'+ item.seourl_url +'\'>'+ item.marka_name +' '+ item.model_name +'</a>';
 								html += '	<a class=\'images\' href=\'/'+ item.seourl_url +'\'><img src=\''+ item.cars_imgocher +'\' alt=\''+ item.marka_name +' '+ item.model_name +'\'><span class=\"cena\">'+ item.cars_qiymeti +'</span></a>';
 								html += '	<span class=\'cars_ili col-sm-4\' title=\'". $locale['001'] ."\'><i class=\"fa fa-calendar\"></i> '+ item.cars_ili +'</span>';
 								html += '	<span class=\'yurush col-sm-8\' title=\'". $locale['002'] ."\'><i class=\"fa fa-history\"></i> '+ item.cars_yurush +' ". $locale['izmerenii_001'] ."</span>';
 								html += '</div>';
+								html += '</div>';
 								// console.log(item.marka_name +' - '+ item.model_name);
 
-								if (say==5) {
-									html += '<div class=\'clear\'></div>';
-									say=0;
-								}
+//								if (say==5) {
+//									html += '<div class=\'clear\'></div>';
+//									say=0;
+//								}
 							});
 							$('#home_moto_cars').html( html );
 						}
@@ -226,6 +237,9 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 	<div class="contentbanner">
 		<div class="banner banner0">
 			<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4406631458345397" data-ad-slot="4945586069" data-ad-format="auto"></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
 		</div>
 		<?php
 			// echo showbanners(16, "center");
@@ -233,37 +247,40 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 	</div>
 
 
-	<div class="salonbloks autosalons">
+	<div class="partsbloks parts">
 		<div class="title"><?php echo $locale['540']; ?></div>
-		<div class="salon">
+		<div class="parts">
 
 			<?php
 			add_to_footer ("
 			<script type='text/javascript'>
 				<!--
 				$(document).ready(function(){
-					$('#home_autosalons').html('<div class=\"ajax-loader\"><img src=\"". IMAGES ."ajax-loader.GIF\" alt=\"\" /><br /><img src=\"". IMAGES ."ajax-loading.gif\" alt=\"\" /></div>');
+					$('#home_parts').html('<div class=\"ajax-loader\"><img src=\"". IMAGES ."ajax-loader.GIF\" alt=\"\" /><br /><img src=\"". IMAGES ."ajax-loading.gif\" alt=\"\" /></div>');
 					$.ajax({
 						type: 'POST',
-						url: '/". INCLUDES ."Json/salons.php',
+						url: '/". INCLUDES ."Json/parts.php',
 						dataType: 'json',
-						data: {salons:'1', limit:'15', where:'(salon_vip=1 || salon_vip=4 || salon_vip=6)'},
+						data: {parts:'1', limit:'15'},
 						success: function(data){
 							var html = '';
 							var say = 0;
 							$.each(data,function(inx, item) { say++;
-								html += '<div class=\'items item'+ say +' col-sm-2\'>';
-								html += '	<a class=\'salon_name\' href=\'/'+ item.seourl_url +'\'>'+ item.salon_name +'</a>';
-								html += '	<a class=\'images\' href=\'/'+ item.seourl_url +'\'><img src=\''+ item.salon_imgocher +'\' alt=\''+ item.salon_name +'\'></a>';
+								html += '<div class=\'items item'+ say +' col-xs-6 col-sm-4 col-md-3 col-lg-3a\'>';
+								html += '<div>';
+								html += '	<a class=\'parts_name\' href=\'/'+ item.seourl_url +'\'>'+ item.parts_name +'</a>';
+								html += '	<a class=\'images\' href=\'/'+ item.seourl_url +'\'><img src=\''+ item.parts_imgocher +'\' alt=\''+ item.parts_name +'\'></a>';
+								html += '	<a class=\'cena\' href=\'/'+ item.seourl_url +'\'>'+ item.parts_qiymeti +'</a>';
+								html += '</div>';
 								html += '</div>';
 								// console.log(item.marka_name +' - '+ item.model_name);
 
-								if (say==5) {
-									html += '<div class=\'clear\'></div>';
-									say=0;
-								}
+//								if (say==5) {
+//									html += '<div class=\'clear\'></div>';
+//									say=0;
+//								}
 							});
-							$('#home_autosalons').html( html );
+							$('#home_parts').html( html );
 						}
 					});
 				});
@@ -271,7 +288,8 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 			</script>
 			");
 			?>
-			<div id="home_autosalons" class="row clearfix"></div>
+			<div id="home_parts" class="row clearfix"></div>
+			<div class="allparts"><a href="/parts.php"><?php echo $locale['541']; ?></a></div>
 		</div>
 	</div>
 
@@ -279,6 +297,9 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 	<div class="contentbanner">
 		<div class="banner banner0">
 			<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4406631458345397" data-ad-slot="1712918063" data-ad-format="auto"></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
 		</div>
 		<?php
 			// echo showbanners(17, "center");
@@ -395,6 +416,9 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 	<div class="contentbanner">
 		<div class="banner banner0">
 			<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4406631458345397" data-ad-slot="5305512867" data-ad-format="auto"></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
 		</div>
 		<?php
 			// echo showbanners(18, "center");

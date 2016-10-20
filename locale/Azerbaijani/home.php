@@ -24,7 +24,8 @@ $locale['530'] = "VIP elanlar";
 $locale['535'] = "Motosikletlər";
 $locale['536'] = "Bütün motosikletlər &gt;&gt;";
 
-$locale['540'] = "Avtosalonlar";
+$locale['540'] = "Avtohissələr";
+$locale['541'] = "Bütün hissələr &gt;&gt;";
 
 
 $locale['valyuta_1'] = "M";

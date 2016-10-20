@@ -835,7 +835,6 @@ article .carbloks .cars .row {
 }
 article .carbloks .cars .items {
 	margin-bottom: 20px;
-	width: 20%;
 	padding: 0 10px;
 }
 article .carbloks .cars .items .marka-model {
@@ -892,10 +891,10 @@ article .carbloks .allcars {
 
 
 
-article .salonbloks {
+article .partsbloks {
 	
 }
-article .salonbloks .title {
+article .partsbloks .title {
     display: block;
     height: 40px;
     line-height: 40px;
@@ -904,14 +903,18 @@ article .salonbloks .title {
     padding: 0 15px;
     text-transform: uppercase;
 }
-article .salonbloks .salon {
+article .partsbloks .parts {
 
 }
-article .salonbloks .salon .items {
-	margin-bottom: 20px;
-	width: 20%
+article .partsbloks .parts .row {
+	margin-right: -10px;
+	margin-left: -10px;
 }
-article .salonbloks .salon .items .salon_name {
+article .partsbloks .parts .items {
+	margin-bottom: 20px;
+	padding: 0 10px;
+}
+article .partsbloks .parts .items .parts_name {
     display: block;
     text-align: center;
     color: #333;
@@ -919,22 +922,28 @@ article .salonbloks .salon .items .salon_name {
     height: 20px;
     overflow: hidden;
 }
-article .salonbloks .salon .items .images {
+article .partsbloks .parts .items .images {
 	display: block;
 	width: 100%;
 	height: 100px;
 	overflow: hidden;
     border: 1px solid #f2f2f2;
 }
-article .salonbloks .salon .items .images:hover {
+article .partsbloks .parts .items .images:hover {
 	border-color: #333;
 }
-article .salonbloks .salon .items .images img {
+article .partsbloks .parts .items .images img {
 	width: 100%;
 	height: auto;
 	min-height: 100px;
 }
-article .salonbloks .allsalon {
+article .partsbloks .parts .items .cena {
+	display: block;
+	text-align: center;
+	color: red;
+	line-height: 14px;
+}
+article .partsbloks .allparts {
 	text-align: right;
 }
 
@@ -1463,7 +1472,7 @@ aside .carbloks .cars {
 aside .carbloks .cars .items {
 	margin-bottom: 15px;
 }
-aside .carbloks .cars .items .marka-model a {
+aside .carbloks .cars .items .marka-model {
     display: block;
     font-size: 14px;
     text-align: center;
@@ -1480,13 +1489,16 @@ aside .carbloks .cars .items .images {
 	border: 1px solid #f2f2f2;
 	margin: 5px 0;
 }
+aside .carbloks .cars .items:hover .images {
+	border-color: #4F5DC5;
+}
 aside .carbloks .cars .items .images img {
 	width: 100%;
 	height: auto;
 	min-height: 70px;
 	border: none;
 }
-aside .carbloks .cars .items .cena a {
+aside .carbloks .cars .items .cena {
 	display: block;
 	text-align: center;
 	color: red;

@@ -1,41 +1,47 @@
-<?php	
-	if (!defined("IN_FUSION")) { die("Access Denied"); }
+<?php
+if (!defined("IN_FUSION")) { die("Access Denied"); }
 
-	include LOCALE.LOCALESET."infusions/left_service_panel.php";
+include LOCALE.LOCALESET."infusions/left_service_panel.php";
 
-
-				$viewcompanent = viewcompanent("service", "name");
-				$seourl_component = $viewcompanent['components_id'];
-
-				$result = dbquery("SELECT
-											service_name,
-											service_imgocher,
-											seourl_url
-									FROM ". DB_SERVICES ."
-									LEFT JOIN ". DB_SEOURL ." ON seourl_filedid=service_id AND seourl_component=". $seourl_component ."
-									WHERE service_aktiv='1' AND (service_vip='3'||service_vip='4')
-									ORDER BY RAND()
-									LIMIT 0, 1");
-				if (dbrows($result)) {
-					openside($locale['infusions_lservice_001']);
-			?>
+openside($locale['infusions_lservice_001']);
+?>
 	<div class="carbloks lastcars">
-		<div class="cars row">
+		<div class="cars">
 			<?php
-					$j=0;
-					while ($data = dbarray($result)) { $j++;
+			add_to_footer ("
+			<script type='text/javascript'>
+				<!--
+				$(document).ready(function(){
+					$('#left_service_panel').html('<div class=\"ajax-loader\"><img src=\"". IMAGES ."ajax-loader.GIF\" alt=\"\" /><br /><img src=\"". IMAGES ."ajax-loading.gif\" alt=\"\" /></div>');
+					$.ajax({
+						type: 'POST',
+						url: '/". INCLUDES ."Json/services.php',
+						dataType: 'json',
+						data: {services:'1', limit:'6', where:'(service_aktiv=1 || service_aktiv=4)'},
+						success: function(data){
+							var html = '';
+							var say = 0;
+							$.each(data,function(inx, item) { say++;
+								html += '<div class=\'items item'+ say +' col-xs-6\'>';
+								html += '	<a class=\'images\' href=\'/'+ item.seourl_url +'\'><img src=\''+ item.service_imgocher +'\' alt=\''+ item.service_name +'\'></a>';
+								html += '	<a class=\'marka-model\' href=\'/'+ item.seourl_url +'\'>'+ item.service_name +'</a>';
+								html += '</div>';
+								// console.log(item.marka_name +' - '+ item.model_name);
+
+								if (say==2) {
+									html += '<div class=\'clear\'></div>';
+									say=0;
+								}
+							});
+							$('#left_service_panel').html( html );
+						}
+					});
+				});
+				//-->
+			</script>
+			");
 			?>
-			<div class="items item<?php echo $j; ?> col-sm-6">
-				<div class="marka-model"><a href="/<?php echo BASEDIR . $data['seourl_url']; ?>" target="_blank"><?php echo $data['service_name']; ?></a></div>
-				<div class="images"><a href="/<?php echo BASEDIR . $data['seourl_url']; ?>" target="_blank"><img src="/<?php echo (empty($data['service_imgocher']) ? IMAGES ."imagenotfound.jpg" : IMAGES . $settings['services_foto_dir'] ."/sm". $data['service_imgocher']); ?>" alt="<?php echo $data['marka_name']; ?> <?php echo $data['model_name']; ?>"></a></div>
-			</div>
-			<?
-					} // db whille
-			?>
+			<div id="left_service_panel" class="row clearfix"></div>
 		</div>
 	</div>
-
-			<?php
-					closeside();
-				} // db query
-			?>
+<?php closeside(); ?>
