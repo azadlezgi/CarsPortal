@@ -15,10 +15,10 @@ add_to_head ("<meta name='viewport' content='width=device-width, initial-scale=1
 add_to_footer ("<script  type='text/javascript' src='/". THEME ."js/jquery.cookie.js'></script>");
 
 add_to_footer ("<script  type='text/javascript' src='/". THEME ."js/bootstrap.js'></script>");
-add_to_head ("<link rel='stylesheet' href='/". THEME ."css/font-awesome.css?1' type='text/css' media='screen' />");
-add_to_head ("<link rel='stylesheet' href='/". THEME ."css/bootstrap.css?1' type='text/css' media='screen' />");
+add_to_head ("<link rel='stylesheet' href='/". THEME ."css/font-awesome.css?2' type='text/css' media='screen' />");
+add_to_head ("<link rel='stylesheet' href='/". THEME ."css/bootstrap.css?2' type='text/css' media='screen' />");
 
-add_to_head ("<link rel='stylesheet' href='/". THEME ."styles.css?1' type='text/css' media='screen' />");
+add_to_head ("<link rel='stylesheet' href='/". THEME ."styles.css?2' type='text/css' media='screen' />");
 
 foreach ($languages as $lang_key => $lang_value) {
 	add_to_head ("<link rel='alternate' hreflang='". $lang_value['languages_short'] ."' href='". $lang_value['languages_site'] ."' />");
