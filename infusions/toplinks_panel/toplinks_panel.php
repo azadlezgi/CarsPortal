@@ -13,7 +13,7 @@ $result = dbquery("SELECT
 							link_window,
 							link_visibility
 				FROM ". DB_SITE_LINKS ."
-				WHERE link_id IN (21, 22, 36, 37, 38)
+				WHERE link_id IN (1, 21, 22, 36, 37, 38)
 				ORDER BY link_order");
 if (dbrows($result)) {
 
