@@ -438,16 +438,16 @@ if (!empty($locale['keywords'])) set_meta("keywords", $locale['keywords']);
 				$facemez="en_US";
 			} 
 		?>
+
 		<div id="fb-root"></div>
-		<?php add_to_footer ("
-		<script>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = \"//connect.facebook.net/<?php echo $facemez; ?>/all.js#xfbml=1\";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>"); ?>
-		<div class="fb-like-box" data-href="https://www.facebook.com/Autosaleaz" data-width="100%" data-height="556" data-show-faces="true" data-stream="false" data-show-border="true" data-header="true"></div>
+		<?php add_to_footer ("<script>(function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s); js.id = id;
+				js.src = '//connect.facebook.net/". $facemez ."/sdk.js#xfbml=1&version=v2.8';
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>"); ?>
+		<div class="fb-page" data-href="https://www.facebook.com/Azericars1" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Azericars1" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Azericars1">Azeri Cars</a></blockquote></div>
 	</div>
 
 <?php

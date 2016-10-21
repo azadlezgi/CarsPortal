@@ -66,7 +66,7 @@
 
 		} else if ($_GET['action']=="edit") {
 
-			$viewcompanent = viewcompanent("articles", "name");
+			$viewcompanent = viewcompanent("article_item", "name");
 			$seourl_component = $viewcompanent['components_id'];
 
 			$result = dbquery(
@@ -310,7 +310,7 @@
 				} // UPDATE ILI INSERT
 
 
-				$viewcompanent = viewcompanent("articles", "name");
+				$viewcompanent = viewcompanent("article_item", "name");
 				$seourl_component = $viewcompanent['components_id'];
 
 				if (empty($article_alias)) {
@@ -627,7 +627,7 @@ add_to_head("<script type='text/javascript'>
 	else { $pagesay = 1; }
 	$rowstart = $settings['articles_per_page']*($pagesay-1);
 
-	$viewcompanent = viewcompanent("articles", "name");
+	$viewcompanent = viewcompanent("article_item", "name");
 	$seourl_component = $viewcompanent['components_id'];
 
 	$result = dbquery("SELECT 
@@ -638,7 +638,7 @@ add_to_head("<script type='text/javascript'>
 								seourl_url
 		FROM ". DB_ARTICLES ."
 		LEFT JOIN ". DB_SEOURL ." ON seourl_filedid=article_id AND seourl_component=". $seourl_component ."
-		LIMIT ". $rowstart .", ". $settings['articles_per_page'] ."");
+		LIMIT ". $rowstart .", ". $settings['articles_per_page']);
 
 	echo "<a href='". FUSION_SELF . $aidlink ."&action=add' class='add_page'>". $locale['010'] ."</a><br />\n";
 
