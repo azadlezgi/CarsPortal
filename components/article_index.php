@@ -45,23 +45,23 @@ if (dbrows($c_result)) {
 	$seourl_component = $viewcompanent['components_id'];
 
 	$articles_arr = array();
-	$result = dbquery("SELECT 
-											article_id,
-											article_name,
-											article_image,
-											article_extract,
-											article_cat,
-											article_order
-											article_access,
-											seourl_url
-			FROM ". DB_ARTICLES ."
-			LEFT JOIN ". DB_SEOURL ." ON seourl_filedid=article_id AND seourl_component=". $seourl_component ."
-			WHERE article_status='1'
-			AND article_date<'". FUSION_TODAY ."'
-	");
-
-			if (dbrows($result)) {
-				while ($data = dbarray($result)) {
+//	$result = dbquery("SELECT
+//											article_id,
+//											article_name,
+//											article_image,
+//											article_extract,
+//											article_cat,
+//											article_order
+//											article_access,
+//											seourl_url
+//			FROM ". DB_ARTICLES ."
+//			LEFT JOIN ". DB_SEOURL ." ON seourl_filedid=article_id AND seourl_component=". $seourl_component ."
+//			WHERE article_status='1'
+//			AND article_date<'". FUSION_TODAY ."'
+//	");
+//
+//			if (dbrows($result)) {
+//				while ($data = dbarray($result)) {
 
 
 
@@ -134,8 +134,8 @@ if (dbrows($c_result)) {
 			} // db query
 		} // article_cat_access
 	} // db whille
-				} // db query
-			} // db whille
+//				} // db query
+//			} // db whille
 } // db query
 echo "</div>\n";
 
