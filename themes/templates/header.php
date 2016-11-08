@@ -43,7 +43,7 @@ add_to_footer ("<script type='text/javascript' src='/".INCLUDES."jquery/jquery.j
 // echo "<script type='text/javascript' src='".INCLUDES."jquery/jquery.js'></script>\n";
 // echo "<script async type='text/javascript' src='". INCLUDES ."jscript.js'></script>\n";
 echo "</head>\n";
-echo "<body". (TRUE_PHP_SELF=="/" ? " class='home'" : "") .">\n";
+echo "<body". (TRUE_PHP_SELF=="/" ? " class='home'" : "") ."  onload=\"init();\">\n";
 
 require_once THEMES."templates/panels.php";
 ob_start();
