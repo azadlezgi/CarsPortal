@@ -95,7 +95,7 @@ add_to_footer ('
 	</script>
 	<!-- write your code here -->');
 ?>
-	<canvas id="canvas" width="100%" height="180" onclick="window.open('http://www.lexus.ru/special/RX/?utm_campaign=Cars-Az.Com&utm_source=Cars-Az.Com&utm_medium=cpm&utm_content=TopBanner');" style="display: block; background-color:rgba(255, 255, 255, 1.00); width:100%; height:180px;"></canvas>
+	<canvas id="canvas" width="100%" height="180" onclick="window.open('http://www.lexus.ru/special/RX/?utm_campaign=Cars-Az.Com&utm_source=Cars-Az.Com&utm_medium=cpm&utm_content=TopBanner');" style="display: block; background-color:rgba(255, 255, 255, 1.00); width:100%; height:180px; cursor:pointer;"></canvas>
 
 <div class="wrapper">
 	<header>
