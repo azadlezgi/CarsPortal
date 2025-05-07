@@ -5,15 +5,6 @@ AddDefaultCharset UTF-8
 RewriteCond %{THE_REQUEST} ^(.*)index\.php\ HTTP/ 
 RewriteRule ^(.*)index\.php$ /$1 [R=301,L]
 
-RewriteCond %{HTTP_HOST} ^www.cars-az.com(.*)
-RewriteRule ^(.*)$ http://cars-az.com/$1 [R=301,L]
-
-
-
-
-RewriteRule ^cars/marks/veziyyet_([0-9]+)/$ ?row_url=cars/marks/&veziyyet=$1 [QSA,L]
-
-
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
